@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <title>Assignment 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d7b7563d24.js" crossorigin="anonymous"></script>
+
+    <!-- ------------------ google font ---------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <style>
+        .font-lato{
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#fff',
+                orange: '#F85559'
+              },
+              screens: {
+        
+                '2xl': {'max': '1535px'},
+                // => @media (max-width: 1535px) { ... }
+        
+                'xl': {'max': '1279px'},
+                // => @media (max-width: 1279px) { ... }
+        
+                'lg': {'max': '1023px'},
+                // => @media (max-width: 1023px) { ... }
+        
+                'md': {'max': '767px'},
+                // => @media (max-width: 767px) { ... }
+        
+                'sm': {'max': '639px'},
+                // => @media (max-width: 639px) { ... }
+                'xsm': {'max': '576px'},
+                // => @media (max-width: 576px) { ... }
+                '2xsm': {'max': '450px'},
+                // => @media (max-width: 450p) { ... }
+                '3xsm': {'max': '375px'},
+                // => @media (max-width: 375px) { ... }
+                '4xsm': {'max': '320px'},
+                // => @media (max-width: 320px) { ... }
+            }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="font-lato bg-white">
+    <header class="bg-white xl:mx-20  pt-7 mb-16  lg:mx-14 md:mx-7 sm:mx-30">
+        <!-- ========================= navbar ============ -->
+        <div>
+            <!-- ==================== navbar for mobile phone ============== -->
+            <div class="hidden 2xsm:block">
+                <div class="navbar bg-base-100  ">
+                    <div class="flex-1">
+                        <div class="h-[60px] flex items-center">
+                            <a href="#"><img class="w-[30px] h-[30px]" src="./assets/images/logo.png" alt=""></a>
+                            <a href="#" class="font-bold text-[#121212] text-[20px] ps-3"><span>Fruit Burst</span></a>
+                        </div>
+                    </div>
+                    <div class="flex-none">
+                    <button class="btn btn-square btn-ghost">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#121212" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <!-- ================ navbar for desktop ================ -->
+            <div class="md:hidden ">
+                <div class="navbar bg-orange rounded-full flex justify-between">
+                    <div class="">
+                    <ul class="mx-[20px] text-[18px] md:text-[16px] font-medium text-white flex">
+                        <li><a href="#" class="pe-[10px] hover:text-[#133813]">Home</a></li>
+                        <li><a href="#" class="pe-[10px] hover:text-[#133813]">About us</a></li>
+                        <li><a href="#" class="pe-[10px] hover:text-[#133813]">Shop</a></li>
+                        <li><a href="#" class="pe-[10px] hover:text-[#133813]">All Fruits</a></li>
+
+                    </ul>
+                    </div>
+                    <div class="h-[60px] ">
+                        <a href="#"><img src="./assets/images/logo.png" alt=""></a>
+                        <a href="#" class="font-bold text-white xl:text-[30px] lg:text-[20px]"><span>Fruit Burst</span></a>
+                    </div>
+                    <!-- ------------------ search box --------------- -->
+                    <div class="flex-none gap-2 pe-10">
+                        <form method="GET">
+                            <div class="relative focus-within:text-gray-400 ">
+                            
+                            <input type="search" name="q" class="py-2 lg:w-[10px] xl:w-[200px]   text-base text-[#121212]  rounded-2xl pl-10 focus:outline-none bg-white focus:text-gray-900" placeholder="Search here" autocomplete="off">
+                            <span class="absolute inset-y-0 right-0 flex items-center pl-2">
+                                <button type="submit" class="p-1 focus:outline-none focus:shadow-outline pe-5 text-[#121212]">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                </button>
+                            </span>
+                            </div>
+                        </form>
+                    
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- ======= backup 1 -->
+        <!-- ===================== slider banner section ============= -->
+<div class="mt-10 relative">
+    <!-- ================== slider ================ -->
+    <div class="relative">
+        <div class="carousel w-full">
+            <div id="slide1" class="carousel-item relative w-full">
+              <img src="./assets/images/banner1.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
+                <a href="#slide4" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❮</a> 
+                <a href="#slide2" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❯</a>
+              </div>
+            </div> 
+            <div id="slide2" class="carousel-item relative w-full">
+              <img src="./assets/images/banner2.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide1" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❮</a> 
+                <a href="#slide3" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❯</a>
+              </div>
+            </div> 
+            <div id="slide3" class="carousel-item relative w-full">
+              <img src="./assets/images/banner3.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide2" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❮</a> 
+                <a href="#slide4" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❯</a>
+              </div>
+            </div> 
+            <div id="slide4" class="carousel-item relative w-full">
+              <img src="./assets/images/banner4.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide3" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❮</a> 
+                <a href="#slide1" class="btn btn-circle text-[#FFFFFF] bg-[#121212]">❯</a>
+              </div>
+            </div>
+          </div>
+          <!-- -----------------------floated text content for banner ----------- -->
+          <div class="absolute sm:text-[24px] md:text-[24px]  md:left-[10%] lg:left-[18%] top-32 lg:h-[316px] lg:w-[760px]">
+            <h1 class="font-extrabold text-[72px] md:text-[38px] sm:text-[35px] text-white leading-tight text-center">Exotic tastes at your <br> doorstep</h1>
+            <p class="text-white text-[20px] font-medium text-center">We supply highly quality organic products</p>
+            <div class="flex justify-center items-center mt-4">
+                <button class=" mx-auto rounded-lg px-9 py-2 bg-[#F85559] text-white">Shop Now</button>
+            </div>
+          </div>
+
+
+          
+
+          
+    </div>
+    <!-- =================== small banner =============== -->
+    <div class="flex md:hidden absolute left-32 -bottom-28 bg-white px-6 py-6 drop-shadow-2xl rounded-lg">
+        <div class="pe-14">
+            <img class="" src="./assets/images/fruit1.png" alt="">
+            <p class="text-center">Graps</p>
+        </div>
+        <div class="pe-14">
+            <img class="" src="./assets/images/fruit2.png" alt="">
+            <p class="text-center">Orange</p>
+        </div>
+        <div class="pe-14">
+            <img class="" src="./assets/images/fruit3.png" alt="">
+            <p class="text-center">Mango</p>
+        </div>
+        <div class="pe-14">
+            <img class="" src="./assets/images/fruit4.png" alt="">
+            <p class="text-center">Strawberry</p>
+        </div>
+        <div class="">
+            <img class="" src="./assets/images/fruit5.png" alt="">
+            <p class="text-center">Strawberry</p>
+        </div>
+    </div>
+    
+</div>
+    </header>
+   <!-- =========== main section backup -->
+
+
+    <main>
+        <section class="mt-48 mx-20 mb-40" id="deal-section">
+            <div class="flex justify-between">
+                <div>
+                    <h1 class="text-[#121212] font-extrabold text-[48px] pb-4">Deal of the day</h1>
+                    <p class="text-[#121212] font-extralight text-base">Contrary to popular belief, is not simply random text. <br>
+                    It has roots in a piece of classical Latin literature <br>
+                    from 45 BC, making it over 2000 years old.
+                    </p>
+                </div>
+                <div>
+                    <div class="grid grid-flow-col gap-5 text-center auto-cols-max mt-10">
+                        <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl">
+                            <span style="--value:15;"></span>:
+                        </span>
+                        days
+                        </div> 
+                        <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl">
+                            <span style="--value:10;"></span>:
+                        </span>
+                        hours
+                        </div> 
+                        <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl">
+                            <span style="--value:24;"></span>:
+                        </span>
+                        min
+                        </div> 
+                        <div class="flex flex-col">
+                        <span class="countdown font-mono text-4xl">
+                            <span style="--value:39;"></span>
+                        </span>
+                        sec
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- ---------------------- card ------------------ -->
+                <div class="mt-10">
+                    <div class="grid gap-6 grid-cols-4">
+                        <!-- card 1 -->
+                        <div class="mx-auto border-solid border-2 border-[#FBC0A8] rounded-lg p-8 px-11">
+                            <img class="mx-auto" src="./assets/images/fruit6.png" alt="">
+                            <div>
+                                <p class="text-[#121212] font-bold text-[24px] mt-10 mb-2">12.90$ - 18.85$</p>
+                                <hr class="pt-3 ">
+                                <div>
+                                    <p class="text-center text-[#121212] font-medium text-base mb-3">Apples</p>
+                                    <!-- rating star -->
+                                    <div class="flex justify-center gap-2">
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#F85559"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.8529 0L17.4018 7.00591L25.4705 9.16716L20.2131 15.6584L20.651 24L12.8529 21.0059L5.05488 24L5.49271 15.6584L0.235352 9.16716L8.30406 7.00591L12.8529 0Z" fill="#F85559"/>
+                                            <path d="M12.9038 0L17.4527 7.00591L25.5214 9.16716L20.264 15.6584L20.7018 24L12.9038 21.0059V0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex justify-center pt-4">
+                                        <!-- The button to open modal -->
+                                        <a href="#my_modal_8" class="text-[#F85559] mx-auto">Details</a>
+                                    </div>
+                                    
+                                    <!-- Put this part before  tag -->
+                                    <div class="modal" id="my_modal_8">
+                                        <div class="modal-box">
+                                            <h3 class="font-bold text-lg">Hello!</h3>
+                                            <p class="py-4">This modal works with anchor links</p>
+                                            <div class="modal-action">
+                                                <!-- if there is a button in form, it will close the modal -->
+                                                <a href="#deal-section" class="btn">Close</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 2 -->
+                        <div class="mx-auto border-solid border-2 border-[#FBC0A8] rounded-lg p-8 px-11">
+                            <img class="mx-auto" src="./assets/images/fruit7.png" alt="">
+                            <div>
+                                <p class="text-[#121212] font-bold text-[24px] mt-10 mb-2">12.90$ - 18.85$</p>
+                                <hr class="pt-3 ">
+                                <div>
+                                    <p class="text-center text-[#121212] font-medium text-base mb-3">Apples</p>
+                                    <!-- rating star -->
+                                    <div class="flex justify-center gap-2">
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#F85559"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.8529 0L17.4018 7.00591L25.4705 9.16716L20.2131 15.6584L20.651 24L12.8529 21.0059L5.05488 24L5.49271 15.6584L0.235352 9.16716L8.30406 7.00591L12.8529 0Z" fill="#F85559"/>
+                                            <path d="M12.9038 0L17.4527 7.00591L25.5214 9.16716L20.264 15.6584L20.7018 24L12.9038 21.0059V0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex justify-center pt-4">
+                                        <!-- The button to open modal -->
+                                        <a href="#my_modal_8" class="text-[#F85559] mx-auto">Details</a>
+                                    </div>
+                                    
+                                    <!-- Put this part before  tag -->
+                                    <div class="modal" id="my_modal_8">
+                                        <div class="modal-box">
+                                            <h3 class="font-bold text-lg">Hello!</h3>
+                                            <p class="py-4">This modal works with anchor links</p>
+                                            <div class="modal-action">
+                                                <!-- if there is a button in form, it will close the modal -->
+                                                <a href="#deal-section" class="btn">Close</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 3 -->
+                        <div class="mx-auto border-solid border-2 border-[#FBC0A8] rounded-lg p-8 px-11">
+                            <img class="mx-auto" src="./assets/images/fruit8.png" alt="">
+                            <div>
+                                <p class="text-[#121212] font-bold text-[24px] mt-10 mb-2">12.90$ - 18.85$</p>
+                                <hr class="pt-3 ">
+                                <div>
+                                    <p class="text-center text-[#121212] font-medium text-base mb-3">Apples</p>
+                                    <!-- rating star -->
+                                    <div class="flex justify-center gap-2">
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#F85559"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.8529 0L17.4018 7.00591L25.4705 9.16716L20.2131 15.6584L20.651 24L12.8529 21.0059L5.05488 24L5.49271 15.6584L0.235352 9.16716L8.30406 7.00591L12.8529 0Z" fill="#F85559"/>
+                                            <path d="M12.9038 0L17.4527 7.00591L25.5214 9.16716L20.264 15.6584L20.7018 24L12.9038 21.0059V0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex justify-center pt-4">
+                                        <!-- The button to open modal -->
+                                        <a href="#my_modal_8" class="text-[#F85559] mx-auto">Details</a>
+                                    </div>
+                                    
+                                    <!-- Put this part before  tag -->
+                                    <div class="modal" id="my_modal_8">
+                                        <div class="modal-box">
+                                            <h3 class="font-bold text-lg">Hello!</h3>
+                                            <p class="py-4">This modal works with anchor links</p>
+                                            <div class="modal-action">
+                                                <!-- if there is a button in form, it will close the modal -->
+                                                <a href="#deal-section" class="btn">Close</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card 4 -->
+                        <div class="mx-auto border-solid border-2 border-[#FBC0A8] rounded-lg p-8 px-11">
+                            <img class="mx-auto" src="./assets/images/fruit9.png" alt="">
+                            <div>
+                                <p class="text-[#121212] font-bold text-[24px] mt-10 mb-2">12.90$ - 18.85$</p>
+                                <hr class="pt-3 ">
+                                <div>
+                                    <p class="text-center text-[#121212] font-medium text-base mb-3">Apples</p>
+                                    <!-- rating star -->
+                                    <div class="flex justify-center gap-2">
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#F85559"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.8529 0L17.4018 7.00591L25.4705 9.16716L20.2131 15.6584L20.651 24L12.8529 21.0059L5.05488 24L5.49271 15.6584L0.235352 9.16716L8.30406 7.00591L12.8529 0Z" fill="#F85559"/>
+                                            <path d="M12.9038 0L17.4527 7.00591L25.5214 9.16716L20.264 15.6584L20.7018 24L12.9038 21.0059V0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z" fill="#FBC0A8"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex justify-center pt-4">
+                                        <!-- The button to open modal -->
+                                        <a href="#my_modal_8" class="text-[#F85559] mx-auto">Details</a>
+                                    </div>
+                                    
+                                    <!-- Put this part before  tag -->
+                                    <div class="modal" id="my_modal_8">
+                                        <div class="modal-box">
+                                            <h3 class="font-bold text-lg">Hello!</h3>
+                                            <p class="py-4">This modal works with anchor links</p>
+                                            <div class="modal-action">
+                                                <!-- if there is a button in form, it will close the modal -->
+                                                <a href="#deal-section" class="btn">Close</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button class="mt-11 hover:bg-white hover:text-black hover:border hover:border-[#f85559] px-10 py-2 bg-[#F85559] font-extrabold text-white rounded-lg">Shop All</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
